@@ -18,9 +18,7 @@ def dist(a, b, ax=1):
     return np.linalg.norm(a - b, axis=ax)
 
 k = 3
-# X coordinates of random centroids
 C_x = np.random.randint(0, np.max(X)-20, size=k)
-# Y coordinates of random centroids
 C_y = np.random.randint(0, np.max(X)-20, size=k)
 C = np.array(list(zip(C_x, C_y)), dtype=np.float32)
 print(C)
@@ -30,20 +28,15 @@ plt.scatter(C_x, C_y, marker='*', s=200, c='g')
 plt.show()
 
 C_old = np.zeros(C.shape)
-# Cluster Lables(0, 1, 2)
 clusters = np.zeros(len(X))
-# Error func. - Distance between new centroids and old centroids
 error = dist(C, C_old, None)
-# Loop will run till the error becomes zero
+
 while error != 0:
-    # Assigning each value to its closest cluster
     for i in range(len(X)):
         distances = dist(X[i], C)
         cluster = np.argmin(distances)
         clusters[i] = cluster
-    # Storing the old centroid values
     C_old = deepcopy(C)
-    # Finding the new centroids by taking the average value
     for i in range(k):
         points = [X[j] for j in range(len(X)) if clusters[j] == i]
         C[i] = np.mean(points, axis=0)
