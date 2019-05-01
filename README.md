@@ -7,5 +7,7 @@ This Repo contains the following:
 
 * The second 10M component:
     1) Implementation of a ML Paper
+       (Research Paper: https://ieeexplore.ieee.org/document/7483683/authors#authors)
+
     
     
