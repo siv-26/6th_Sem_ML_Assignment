@@ -6,7 +6,6 @@ import seaborn as sns
 
 
 #Import Cancer data from the Sklearn library
-# Dataset can also be found here (http://archive.ics.uci.edu/ml/datasets/breast+cancer+wisconsin+%28diagnostic%29)
 
 from sklearn.datasets import load_breast_cancer
 cancer = load_breast_cancer()
