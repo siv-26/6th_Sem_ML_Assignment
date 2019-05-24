@@ -1,4 +1,4 @@
-# MachineLearningProject-20M-
+# MachineLearningProject-Assignment
 This Repo contains the following:
 
 * The first component:
